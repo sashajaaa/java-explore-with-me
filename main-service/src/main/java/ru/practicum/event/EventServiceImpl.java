@@ -58,7 +58,6 @@ public class EventServiceImpl implements EventService {
         User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException(userId));
         Category category = categoryRepository.findById(newEventDto.getCategory())
                 .orElseThrow(() -> new CategoryNotFoundException(newEventDto.getCategory()));
-
         Event event = toEvent(newEventDto);
         if (event.getEventDate().isBefore(LocalDateTime.now().plusHours(2))) {
             throw new ValidationRequestException("Cannot create the event, because less 2 hours before event datetime");
@@ -200,8 +199,7 @@ public class EventServiceImpl implements EventService {
         if (updateEventAdminRequestDto.getEventDate() != null) {
             event.setEventDate(LocalDateTime.parse(updateEventAdminRequestDto.getEventDate(), formatter));
         }
-        if (updateEventAdminRequestDto.getLocation() == null) {
-        } else {
+        if (updateEventAdminRequestDto.getLocation() != null) {
             Location location = event.getLocation();
             location.setLat(updateEventAdminRequestDto.getLocation().getLat());
             location.setLon(updateEventAdminRequestDto.getLocation().getLon());
