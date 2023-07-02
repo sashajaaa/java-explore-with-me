@@ -1,5 +1,7 @@
 # java-explore-with-me  
 
+### ссылка на [PR - feature_comments](https://github.com/sashajaaa/java-explore-with-me/pull/5).
+
 ## Схема базы данных:  
 ![er-diagram](er_diagram.png)
 
