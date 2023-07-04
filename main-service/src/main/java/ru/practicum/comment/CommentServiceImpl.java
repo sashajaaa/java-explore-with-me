@@ -42,7 +42,6 @@ public class CommentServiceImpl implements CommentService {
         comment.setEvent(event);
         comment.setAuthor(user);
         comment.setState(CommentState.PENDING);
-        comment.setCreatedOn(LocalDateTime.now());
         return toCommentResponseDto(commentRepository.save(comment));
     }
 
@@ -75,7 +74,6 @@ public class CommentServiceImpl implements CommentService {
             throw new ForbiddenException("Can not update confirmed comment.");
         }
         comment.setText(newCommentDto.getText());
-        comment.setUpdatedOn(LocalDateTime.now());
         comment.setState(CommentState.PENDING);
         return toCommentResponseDto(commentRepository.save(comment));
     }
@@ -105,7 +103,7 @@ public class CommentServiceImpl implements CommentService {
         } else {
             comment.setState(CommentState.REJECTED);
         }
-        comment.setUpdatedOn(LocalDateTime.now());
+        comment.setPublishedOn(LocalDateTime.now());
         return toCommentResponseDto(commentRepository.save(comment));
     }
 }

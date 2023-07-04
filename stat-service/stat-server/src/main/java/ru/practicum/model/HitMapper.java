@@ -1,14 +1,14 @@
 package ru.practicum.model;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import ru.practicum.HitDto;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class HitMapper {
-
-    private HitMapper() {
-    }
 
     public static Hit toHit(HitDto hitDto) {
         return Hit.builder()

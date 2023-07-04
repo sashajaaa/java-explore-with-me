@@ -1,5 +1,7 @@
 package ru.practicum.comment.dto;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import ru.practicum.comment.Comment;
 
 import java.time.format.DateTimeFormatter;
@@ -7,11 +9,9 @@ import java.time.format.DateTimeFormatter;
 import static ru.practicum.event.dto.EventMapper.toEventShortDto;
 import static ru.practicum.user.dto.UserMapper.toUserShortDto;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CommentMapper {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-    private CommentMapper() {
-    }
 
     public static Comment toComment(NewCommentDto newCommentDto) {
         return Comment.builder()
@@ -28,6 +28,7 @@ public class CommentMapper {
                 .state(comment.getState().toString())
                 .createdOn(comment.getCreatedOn().format(formatter))
                 .updatedOn(comment.getUpdatedOn() != null ? comment.getUpdatedOn().format(formatter) : null)
+                .publishedOn(comment.getUpdatedOn() != null ? comment.getPublishedOn().format(formatter) : null)
                 .build();
     }
 }

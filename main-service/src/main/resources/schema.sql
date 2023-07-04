@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS comments (
     state VARCHAR(255),
     text VARCHAR(512) NOT NULL,
     updated_on TIMESTAMP WITHOUT TIME ZONE,
+    published_on TIMESTAMP WITHOUT TIME ZONE,
     author_id BIGINT CONSTRAINT fk_author REFERENCES users,
     event_id BIGINT CONSTRAINT fk_event_1 REFERENCES events
 );

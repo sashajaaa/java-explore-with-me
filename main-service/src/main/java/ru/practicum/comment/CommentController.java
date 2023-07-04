@@ -17,10 +17,12 @@ import ru.practicum.comment.dto.NewCommentDto;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Validated
 public class CommentController {
     private final CommentService commentService;
 
@@ -34,8 +36,8 @@ public class CommentController {
 
     @GetMapping("/events/{eventId}/comments")
     public List<CommentResponseDto> getEventComments(@PathVariable @Valid @Positive Long eventId,
-                                                     @RequestParam(defaultValue = "0") int from,
-                                                     @RequestParam(defaultValue = "10") int size) {
+                                                     @RequestParam(defaultValue = "0") @PositiveOrZero int from,
+                                                     @RequestParam(defaultValue = "10") @Positive int size) {
         return commentService.getEventComments(eventId, from, size);
     }
 

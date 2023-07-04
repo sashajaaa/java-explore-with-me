@@ -19,4 +19,5 @@ public class CommentResponseDto {
     private String state;
     private String createdOn;
     private String updatedOn;
+    private String publishedOn;
 }
