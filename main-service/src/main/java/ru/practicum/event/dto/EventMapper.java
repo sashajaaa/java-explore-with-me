@@ -19,7 +19,6 @@ import static ru.practicum.user.dto.UserMapper.toUserShortDto;
 public class EventMapper {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-
     public static Event toEvent(NewEventDto newEventDto) {
         return Event.builder()
                 .title(newEventDto.getTitle())

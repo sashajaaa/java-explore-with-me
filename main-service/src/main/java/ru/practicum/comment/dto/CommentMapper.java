@@ -28,7 +28,7 @@ public class CommentMapper {
                 .state(comment.getState().toString())
                 .createdOn(comment.getCreatedOn().format(formatter))
                 .updatedOn(comment.getUpdatedOn() != null ? comment.getUpdatedOn().format(formatter) : null)
-                .publishedOn(comment.getUpdatedOn() != null ? comment.getPublishedOn().format(formatter) : null)
+                .publishedOn(comment.getPublishedOn() != null ? comment.getPublishedOn().format(formatter) : null)
                 .build();
     }
 }

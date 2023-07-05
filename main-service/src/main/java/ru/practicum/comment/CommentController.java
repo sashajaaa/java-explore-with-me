@@ -20,9 +20,9 @@ import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 import java.util.List;
 
+@Validated
 @RestController
 @RequiredArgsConstructor
-@Validated
 public class CommentController {
     private final CommentService commentService;
 

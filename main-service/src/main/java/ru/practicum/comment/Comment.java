@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 import ru.practicum.event.Event;
 import ru.practicum.user.User;
 
@@ -51,11 +49,9 @@ public class Comment {
     @Enumerated(EnumType.STRING)
     private CommentState state;
 
-    @CreationTimestamp
     @Column(name = "created_on")
     private LocalDateTime createdOn;
 
-    @UpdateTimestamp
     @Column(name = "updated_on")
     private LocalDateTime updatedOn;
 
