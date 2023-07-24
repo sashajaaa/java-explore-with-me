@@ -1,4 +1,4 @@
-# Проект `Java-explore-with-me`!
+# Проект `Java-explore-with-me`
 
 Бэкенд приложения **ExploreWithMe** (англ. «исследуй со мной»). Дает возможность делиться информацией об интересных событиях и помогает найти компанию для участия в них.
 
@@ -27,7 +27,7 @@ Java, Spring Boot, SQL, PostgreSQL, JPA, Hibernate, Maven, Docker.
 2. [Сервис статистики (swagger)](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Keindel/java-explore-with-me/main/ewm-stats-service-spec.json)
 
 ### Как использовать:
-mvn clean package
+mvn clean package  
 docker-compose up -d
 
 ## Схема базы данных:  
