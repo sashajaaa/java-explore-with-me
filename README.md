@@ -1,6 +1,34 @@
-# java-explore-with-me  
+# Проект `Java-explore-with-me`
 
-### ссылка на [PR - feature_comments](https://github.com/sashajaaa/java-explore-with-me/pull/5).
+Бэкенд приложения **ExploreWithMe** (англ. «исследуй со мной»). Дает возможность делиться информацией об интересных событиях и помогает найти компанию для участия в них.
+
+Приложение является афишей, где можно предложить какое-либо событие и набрать компанию для участия в нём.
+![main front](./front%20page.png)
+
+### Стек:
+Java, Spring Boot, SQL, PostgreSQL, JPA, Hibernate, Maven, Docker.
+
+### Микросервисы
+1. Основной сервис — содержит всё необходимое для работы продукта.
+
+- API разделено на три части:
+  - Первая — публичная, доступна без регистрации любому пользователю сети.
+  - Вторая — закрытая, доступна только авторизованным пользователям.
+  - Третья — административная, для администраторов сервиса.
+
+2. Сервис статистики — хранит количество просмотров и позволяет делать различные выборки для анализа работы приложения.
+- собирает информацию:  
+  - о количестве обращений пользователей к спискам событий  
+  - о количестве запросов к подробной информации о событии  
+- на основе собранной информации формируется статистика о работе приложения.  
+
+### Спецификация API
+1. [Основной сервис (swagger)](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Keindel/java-explore-with-me/main/ewm-main-service-spec.json)
+2. [Сервис статистики (swagger)](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/Keindel/java-explore-with-me/main/ewm-stats-service-spec.json)
+
+### Как использовать:
+mvn clean package
+docker-compose up -d
 
 ## Схема базы данных:  
 ![er-diagram](er_diagram.png)
